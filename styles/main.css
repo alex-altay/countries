@@ -1,6 +1,7 @@
 :root {
   --borders: 1px solid #666666;
   --header-font-color: rgb(255,255,255);
+  --header-background-color: #0081cf;
   --shadow-color: rgb(102,102,102);
 }
 
@@ -18,7 +19,7 @@ header {
   flex-wrap: wrap;
   align-items: center;
   border: var(--borders);
-  background-color:#0081cf;
+  background-color: var(--header-background-color);
   -webkit-box-shadow: 0px 5px 5px 0px var(--shadow-color); 
   box-shadow: 0px 5px 5px 0px var(--shadow-color);
 }
@@ -77,6 +78,7 @@ h2 {
 .edit {
   width: 20px;
   margin: 0 0 0 5px;
+  cursor: pointer;
 }
 .lines span:first-child {
   font-weight: 600;
@@ -107,3 +109,81 @@ h2 {
     height: 165px;
   }
 }
+
+
+/* EDIT MODAL */
+.modal-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 100px auto;
+}
+
+.edit-modal-window {
+  flex-basis: 550px;
+  border: var(--borders);
+  border-radius: 10px;
+  overflow: hidden;
+  -webkit-box-shadow: 5px 5px 15px 0px var(--shadow-color);
+  box-shadow: 5px 5px 15px 0px var(--shadow-color);
+}
+
+.edit-modal-header {
+  padding: 15px;
+  /* overflow: hidden; */
+  color: var(--header-font-color);
+  background-color:var(--header-background-color);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 40px 80px;
+}
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+form input, form button {
+  box-sizing: border-box;
+  border: var(--borders);
+  height: 35px;
+  border-radius: 3px;
+}
+form input {
+  min-width: 150px;
+  padding-left: 10px;
+  margin: 0 0 23px 0;
+  -webkit-box-shadow: 1px 1px 4px 0px #BBB;
+  box-shadow: 1px 1px 4px 0px #BBB;
+}
+
+form input:focus {
+  border: 1px solid #000;
+  -webkit-box-shadow: 1px 1px 4px 0px #333;
+  box-shadow: 1px 1px 4px 0px #333;
+}
+
+
+button {
+  flex-grow: 1;
+  cursor: pointer;
+}
+button:hover {
+  font-weight: bold;
+}
+button:first-child {
+  margin-right: 10px;
+  background-color: rgb(1, 102, 1);
+  color: var(--header-font-color);
+  border: none;
+}
+button:last-child {
+  margin-left: 10px;
+  background-color: transparent;
+}
+
